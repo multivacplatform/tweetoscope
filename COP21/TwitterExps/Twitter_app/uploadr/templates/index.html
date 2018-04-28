@@ -1,0 +1,38 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TwitterQuerier</title>
+
+    <script src="{{ url_for('static', filename='js/jsapi.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-1.10.2.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chartkick.js') }}"></script>
+
+
+    <link type="text/css" href="{{ url_for('static', filename='js/uien.css') }}" rel="stylesheet"/>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/corecharten.js') }}"></script>
+    <link href="{{ url_for('static', filename='js/tooltip.css') }}" rel="stylesheet" type="text/css"/>
+
+    <style>
+      body {
+        padding: 20px;
+        margin: 0;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+    </style>
+
+</head>
+<body>
+
+    <h1>Multiple Series Line</h1>
+    <div id="chart-4" style="height: 300px;"></div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

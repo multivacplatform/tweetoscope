@@ -1,0 +1,122 @@
+div.twitter-tweet-rendered p.entry-title {
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
+    padding: 5px !important;
+    background: #eee !important;
+    max-width: 300px !important;
+    margin: 1%;  
+}
+
+div.twitter-tweet-rendered p.entry-title a.link {
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
+}
+
+div.twitter-tweet-rendered div.twt-border {
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+div.twitter-tweet-rendered iframe.twt-follow-button { display: none !important; }
+
+div.twitter-tweet-rendered div.footer ul.twt-actions {display: none !important;}
+
+div.twitter-tweet-rendered div.footer a.view-details {
+    display:block !important;
+    width: 120px !important;
+    margin: 5px 0 !important;
+    padding: 7px 0 !important;
+    background: #000 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-radius: 13px !important;
+    text-align: center !important;
+    box-shadow: -1px -1px 2px #555 !important;
+}
+    
+div.twitter-tweet-rendered div.footer a.view-details span {
+    font: 14px Georgia, serif !important;
+    color: #fff !important;
+}
+
+/*div.Tweet-header {    
+    margin-bottom:  1%;
+}*/
+
+div.Tweet-header.u-cf > div.Tweet-author.u-textTruncate.h-card.p-author > a > span.Tweet-authorAvatar.Identity-avatar > img {
+    max-width: 60%;
+    max-height: 60%;
+}
+
+#my-ajax-table > tbody > tr > td {
+    padding:2%;
+}
+
+
+
+#my-ajax-table > tbody > tr > td > blockquote > div.Tweet-header.u-cf {
+    padding-left: 10%;
+}
+
+#my-ajax-table > tbody > tr > td > blockquote > div.Tweet-header.u-cf > div.Tweet-author.u-textTruncate.h-card.p-author > a > span.Tweet-authorAvatar.Identity-avatar {
+    width:15%;
+}
+
+.Tweet-authorScreenName { 
+    font-size: .4vw; 
+}
+
+div.Tweet-body.e-entry-content > p {
+    font-size: .6vw;
+}
+
+/* Disable all links 
+a {
+    pointer-events:none;
+}*/
+#twitter-widget-0 {
+    max-width: 100%;
+}
+
+.EmbeddedTweet-tweet {
+    padding:0%; 
+}
+
+.table {
+    margin-bottom:0%;
+}
+
+.tweets-header-style{
+    font-size:.8vw;
+}
+
+.u-linkBlend{
+    font-size:.5vw;    
+}
+
+
+/*actions icons*/
+.Tweet-actions {
+    margin-top: 0%;
+    font-size:.6vw;   
+}
+
+.TweetAction-stat {
+    font-size:.5vw;       
+}
+
+#ui-id-1 {
+    width:100px;
+}
+
+#heatgraph > span {
+    bottom:5%;
+}
+
+.many .dygraph-legend {
+    left:0%;
+    text-align: right;
+}
+/*.dygraph-legend {   
+}*/

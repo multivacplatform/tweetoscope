@@ -1,0 +1,78 @@
+
+<!-- saved from url=(0062)http://brianjohnsondesign.com/unlisted/demos/responsivesquare/ -->
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+	<link rel="stylesheet" href="css/ion.rangeSlider.css" type="text/css">
+    <link rel="stylesheet" href="style.min.css" />
+    <link rel="stylesheet" href="demo_rangeslider.css" />
+    <link rel="stylesheet" href="css/skin2.css" />
+	
+	</head>
+
+<body>    
+
+
+	<div class="panel__layout">
+		<input id="range_09" />
+		<button id="update_slider">Go to [1]</button>
+	</div>
+
+
+
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/ion.rangeSlider.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	
+	var months = [
+	        "January", "February", "March",
+	        "April", "May", "June",
+	        "July", "August", "September",
+	        "October", "November", "December"
+	    ]
+
+	$("#range_09").ionRangeSlider({
+	    grid: true,
+	    from: 3,
+	    values: months,
+	    
+	    keyboard: true,
+	    onStart: function (data) {
+	        console.log("onStart");
+	    },
+	    onChange: function (data) {
+	        console.log("onChange");
+	    },
+	    onFinish: function (data) {
+	        console.log("onFinish");
+	    },
+	    onUpdate: function (data) {
+	        console.log("onUpdate");
+	    }
+	});
+
+	var $range = $("#range_09");
+	var slider = $range.data("ionRangeSlider");
+
+
+	$update = $("#update_slider")
+	$update.on("click", function () {
+	    slider.update({
+	        from: 1
+	    });
+	});
+
+
+	var counter = 0;
+	for (var start = 0; start < months.length; start++) {
+	    setTimeout(function () { 
+	    	console.log('hello value: '+counter);
+	    	slider.update({ from: counter });
+	    	counter++;  
+	    }, 1000 * start);
+	}
+</script>
+</body>
+
+</html>

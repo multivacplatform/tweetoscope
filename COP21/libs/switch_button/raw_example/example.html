@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/ToggleSwitch.css"/>
+    
+
+</head>
+<body>
+
+
+<div class="container">
+
+<input type="checkbox" name="onoffswitch1" id="myonoffswitch1" checked><br>
+<input type="checkbox" name="onoffswitch2" id="myonoffswitch2">
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="lib/ToggleSwitch.js"></script>
+<script>
+	$(function(){
+		$("#myonoffswitch1").toggleSwitch();
+		$("#myonoffswitch2").toggleSwitch();
+	});
+</script>
+
+</body>
+</html>

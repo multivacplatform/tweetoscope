@@ -1,0 +1,101 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TwitterQuerier</title>
+
+
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='dynatable/bootstrap.min.css') }}" />    
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='dynatable/jquery.dynatable.css') }}" />
+
+    <link type="text/css" href="{{ url_for('static', filename='js/dynastuff/textarea.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='js/dynastuff/gallery.css') }}" rel="stylesheet" type="text/css"/>
+
+
+   <link type="text/css" href="{{ url_for('static', filename='twitter/tweet.light.ltr.css') }}" rel="stylesheet"/>
+   <link type="text/css" href="{{ url_for('static', filename='twitter/custom.css') }}" rel="stylesheet"/>
+
+    <style>
+      .few .dygraph-legend > span.highlight { 
+        border: 1px solid grey; 
+      }
+
+      .many .dygraph-legend > span { 
+        display: none; 
+      }
+
+      .many .dygraph-legend > span.highlight { 
+        display: inline; 
+      }
+
+
+
+      .no-transition {
+        -webkit-transition: height 0.1s;
+        -moz-transition: height 0.1s;
+        -ms-transition: height 0.1s;
+        -o-transition: height 0.1s;
+        transition: height 0.1s;
+      }
+      th { color: #fff; }
+
+      th a {
+        color: #fff;
+        font-weight: normal;
+        font-style: italic;
+        font-size: 0.9em;
+      }
+
+      .dynatable-record-count {
+        font-size: 0.7em;
+      }
+      .dynatable-pagination-links {
+        font-size: 0.7em;
+      }
+
+      .the_container {
+        width: 1000px;
+      }
+
+    </style>
+
+</head>
+<body>
+
+  <div class="the_container">
+    <h1>Multiple Series Line</h1>
+    <div id="demo"></div>
+
+    <br>
+    <br>
+
+    <div id="div-table"></div>
+
+    <!-- <div id="div-twitter"></div> -->
+  
+  </div>
+
+
+
+
+
+    <script src="{{ url_for('static', filename='dynatable/jquery.min.js') }}"></script>
+
+    <script type='text/javascript' src="{{ url_for('static', filename='dynatable/jquery.dynatable.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/dynastuff/dygraph.combined.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/dynatable/Library.js') }}"></script>
+
+
+    <script type='text/javascript' src="{{ url_for('static', filename='twitter/widgets.js') }}" charset="utf-8"></script>
+
+
+    <script src="{{ url_for('static', filename='js/maindygraph.js') }}"></script>
+
+
+</body>
+
+</html>

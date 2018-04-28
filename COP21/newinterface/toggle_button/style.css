@@ -1,0 +1,109 @@
+
+.control-center {
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	width:100%;
+	min-width:320px;
+}
+
+.control-center .toggle-btn {
+	margin: 0 auto;
+}
+
+.toggle-btn {
+	position:relative;
+	max-width:200px;
+	height: 50px;
+	height:50px;
+	line-height: 50px;				
+}
+
+.toggle-btn .toggle-round {
+	margin:0 auto;
+	width:75%;
+	height: 100%;
+	line-height: 50px;	
+	border:10px solid #FFFFFF;
+	-webkit-border-radius: 50px;
+	   -moz-border-radius: 50px;	
+	        border-radius: 50px;				
+}
+
+.toggle-btn input[type="checkbox"] {
+	position: absolute;
+	left:-2500px;
+}
+
+.toggle-btn label { 
+	display:block;	
+	position: absolute;
+	width: 100%;
+	height: 100%;		
+	cursor: pointer;
+}	
+
+.toggle-btn .toggle-round label:before {
+	position: absolute;
+	content: " ";
+	top:50%;
+	margin-top: -18px;
+	margin-left: 10px;
+	display: inline-block;
+	background:#FFFFFF;
+	width:36px;
+	height: 36px;
+	-webkit-border-radius: 36px;
+	   -moz-border-radius: 36px;	
+	        border-radius: 36px;	
+
+	-webkit-transform: translate3d(0,0,0);
+	   -moz-transform: translate3d(0,0,0);	
+	        transform: translate3d(0,0,0);	
+
+	-webkit-transition:  -webkit-transform 750ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	   -moz-transition: -moz-transform 750ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	        transition: transform 750ms cubic-bezier(0.390, 0.575, 0.565, 1.000);					        		        		
+}
+
+.toggle-btn input[type="checkbox"]:checked ~ label:before { 
+	-webkit-transform: translate3d(95px,0,0);
+	   -moz-transform: translate3d(95px,0,0);	
+	        transform: translate3d(95px,0,0);					
+}
+
+.toggle-btn figure {
+	position: absolute;
+	top:50%;
+	margin-top: 2px;
+}		
+
+.toggle-btn figure g {
+	-webkit-transition:  fill 750ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	   -moz-transition: fill 750ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	        transition: fill 750ms cubic-bezier(0.390, 0.575, 0.565, 1.000);					
+}
+
+.toggle-btn figure.icon-unchecked {
+	left: -65px;
+}	
+
+.toggle-btn figure.icon-checked {
+	right: -65px;
+}	
+
+.toggle-btn figure.icon-unchecked g {
+	fill: rgba(0,0,0, 0.5);
+}		
+
+.toggle-btn figure.icon-checked g {
+	fill: #FFFFFF;
+}		
+
+.toggle-btn input[type="checkbox"]:checked ~ figure.icon-unchecked g {
+	fill: #FFFFFF;
+}	
+
+.toggle-btn input[type="checkbox"]:checked ~ figure.icon-checked g {
+	fill: rgba(0,0,0, 0.5);
+}	

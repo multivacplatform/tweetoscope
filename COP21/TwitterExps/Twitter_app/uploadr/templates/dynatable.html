@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html>
+<body>
+<head>
+
+
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='dynatable/bootstrap.min.css') }}" />    
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='dynatable/jquery.dynatable.css') }}" />
+    
+    
+    
+
+</head>
+
+<table id="my-ajax-table" class="table table-bordered">
+  <thead>
+    <th data-dynatable-column="date">Date</th>
+    <th data-dynatable-column="name">Title</th>
+    <th data-dynatable-column="del" data-dynatable-no-sort="true">Trash</th>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+
+    <h1>Multiple Series Line</h1>
+    <div id="demo"></div>
+
+    <br>
+
+    <script type='text/javascript' src="{{ url_for('static', filename='dynatable/jquery.min.js') }}"></script>
+    <script type='text/javascript' src="{{ url_for('static', filename='dynatable/jquery.dynatable.js') }}"></script>
+    <script type='text/javascript' src="{{ url_for('static', filename='dynatable/mainexample.js') }}"></script>
+
+
+</body>
+</html>
