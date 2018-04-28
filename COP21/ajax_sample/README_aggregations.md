@@ -1,7 +1,7 @@
 Agregation data from ES
 =======================
 
-Data was provided through 'weekly' aggregation by Maz on the tweets about climate change
+Data was provided through 'weekly' aggregation by `Multivac Platform` on the tweets about climate change
 
 Data was filtered later with the list of keywords from the gexf labels thanks to script in tools subdir.
 
