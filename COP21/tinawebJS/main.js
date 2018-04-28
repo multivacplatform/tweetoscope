@@ -21,7 +21,7 @@
   /\(([\s\S]*?)\)/,
   /[$\w]+/g
 );
-var AjaxSync = (function(TYPE, URL, DATA, CT , DT) {
+var AjaxSync = (function(TYPE, URL, DATA, CT , DT, GEXF) {
     var Result = []
     TYPE = (!TYPE)?"GET":"POST"
     if(DT && (DT=="jsonp" || DT=="json")) CT="application/json";
@@ -35,7 +35,11 @@ var AjaxSync = (function(TYPE, URL, DATA, CT , DT) {
             async: false,
             success : function(data, textStatus, jqXHR) {
                 header = jqXHR.getResponseHeader("Content-Type")
-                header = (header)?"json":"gexf";
+                if(GEXF){
+                    header = "gexf";
+                } else {
+                    header = (header)?"json":"gexf";
+                }
                 Result = { "OK":true , "format":header , "data":data };
             },
             error: function(exception) {
@@ -102,7 +106,7 @@ if(RES["OK"]) {
         pr("\n============================\n")
         pr(field)
         pr(gexfDict)
-        var sub_RES = AjaxSync({ URL: getUrlParam.file });
+        var sub_RES = AjaxSync({ URL: getUrlParam.file, GEXF: true });
         the_data = sub_RES["data"]
         fileparam = sub_RES["format"]
         pr(the_data.length)
