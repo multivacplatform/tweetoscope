@@ -40,5 +40,6 @@ TwitterExps/*
 TwitterExps/.*
 data/*
 ajax_sample/*
+/COP21/ajax_sample/tools/
 
 .idea
