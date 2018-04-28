@@ -194,20 +194,22 @@ function DavidStuff( flag ) {
     var min_size = 1000000
     var max_size = -1
     for(var i in MeanFreq_nodes) {
-        var T = MeanFreq_nodes[i];
-        var W = wos_data[i][0];
+        if(wos_data.hasOwnProperty(i)) {
+            var T = MeanFreq_nodes[i];
+            var W = wos_data[i][0];
 
-        // var part1 = Math.log10(W+1)/Math.log10(MaxW)
-        // var part2 = Math.log10(T+1)/Math.log10(MaxT_avg)
-        // Math.pow(,-3)/Math.pow(,-3)
-        var part1 = Math.pow(W,1/2)/Math.pow(MaxW,1/2)//Math.sqrt(W+1)/Math.sqrt(MaxW)
-        var part2 = Math.pow(T,1/2)/Math.pow(MaxT_avg,1/2)//Math.sqrt(T+1)/Math.sqrt(MaxT_avg)
+            // var part1 = Math.log10(W+1)/Math.log10(MaxW)
+            // var part2 = Math.log10(T+1)/Math.log10(MaxT_avg)
+            // Math.pow(,-3)/Math.pow(,-3)
+            var part1 = Math.pow(W, 1 / 2) / Math.pow(MaxW, 1 / 2)//Math.sqrt(W+1)/Math.sqrt(MaxW)
+            var part2 = Math.pow(T, 1 / 2) / Math.pow(MaxT_avg, 1 / 2)//Math.sqrt(T+1)/Math.sqrt(MaxT_avg)
 
 
-        Sizes[i] = Math.round( Math.max( part1 , part2 )*100 )//Math.sqrt( Math.pow(part1,2)+ Math.pow(part2,2))//Math.round( Math.max( part1 , part2 )*100 )
+            Sizes[i] = Math.round(Math.max(part1, part2) * 100)//Math.sqrt( Math.pow(part1,2)+ Math.pow(part2,2))//Math.round( Math.max( part1 , part2 )*100 )
 
-        if (Sizes[i]<min_size) min_size = Sizes[i];
-        if (Sizes[i]>max_size) max_size = Sizes[i];
+            if (Sizes[i] < min_size) min_size = Sizes[i];
+            if (Sizes[i] > max_size) max_size = Sizes[i];
+        }
     }
 
     // === [ Normalizing Frequencies ] === //
@@ -228,16 +230,18 @@ function DavidStuff( flag ) {
     // 03.-  Calculating the ratio Tw/WoS
     var Temp = {}
     for(var i in Frecs_nodes_cp) {
-        var sum = 0
-        var occs = Frecs_nodes_cp[i]
-        for(var j in occs) {
-            sum += occs[j]
-        }
-        var Tn = sum/occs.length
-        var Wn = wos_data[i][1]
+        if(wos_data.hasOwnProperty(i)) {
+            var sum = 0
+            var occs = Frecs_nodes_cp[i]
+            for (var j in occs) {
+                sum += occs[j]
+            }
+            var Tn = sum / occs.length
+            var Wn = wos_data[i][1]
 
-        Temp[i] = Tn/(Wn+0.000001); //the ratio
-        // console.log(Temp[i]+"\t"+Math.round(Wn*10000)+"\t"+Math.round(Tn*10000)+"\t\t"+i)
+            Temp[i] = Tn / (Wn + 0.000001); //the ratio
+            // console.log(Temp[i]+"\t"+Math.round(Wn*10000)+"\t"+Math.round(Tn*10000)+"\t\t"+i)
+        }
     }
 
     // 04.-  Creating pre-RGBColors [+-]
@@ -536,10 +540,14 @@ function ParseTwitterData( ) {
     for(var i in Frecs.nodes) {
         var occs = Frecs.nodes[i];
         for(var j in occs) {
+            if(wos_data.hasOwnProperty(i)) {
                 var Tn = occs[j]/Max_Freq
                 var Wn = wos_data[i][1]
                 var ratio = Tn/(Wn+0.000001)
                 Ratios[i][j] = ratio
+            } else {
+
+            }
         }
     }
     //      = = = = = = = [ / Min y Max de las frecuencias ]    = = = = = //
