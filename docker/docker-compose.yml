@@ -16,8 +16,8 @@ services:
             - 9000
         volumes_from:
             - app
-        depends_on:
-            - mysql
+#        depends_on:
+#           - mysql
 
     app:
         image: php:7.0-fpm
@@ -25,24 +25,24 @@ services:
             - ../.:/var/www/html
         command: "true"
 
-    mysql:
-        image: mysql:latest
-        volumes:
-            - data:/var/lib/mysql
-        environment:
-            MYSQL_ROOT_PASSWORD: secret
-            MYSQL_DATABASE: project
-            MYSQL_USER: project
-            MYSQL_PASSWORD: project
+#    mysql:
+#        image: mysql:latest
+#        volumes:
+#            - data:/var/lib/mysql
+#        environment:
+#            MYSQL_ROOT_PASSWORD: secret
+#            MYSQL_DATABASE: project
+#            MYSQL_USER: project
+#            MYSQL_PASSWORD: project
 
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        ports:
-            - 8080:80
-        depends_on:
-            - mysql
-        environment:
-            PMA_HOST: mysql
+#    phpmyadmin:
+#        image: phpmyadmin/phpmyadmin
+#        ports:
+#            - 8080:80
+#        depends_on:
+#            - mysql
+#        environment:
+#            PMA_HOST: mysql
 
 volumes:
     data:
