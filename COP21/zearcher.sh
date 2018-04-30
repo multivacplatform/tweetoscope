@@ -16,7 +16,7 @@ function testing {
 	do
 		if [[ "$f" != *_.gexf* ]]
 		then
-			variable=`cat $f | grep "<description>Carla__Taramasco"`
+			variable=`cat $f | grep "<description>John"`
 			if [[ "$variable" != "" ]]
 			then
 				echo $f
