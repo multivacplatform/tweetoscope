@@ -156,7 +156,7 @@ function clickInsideTweet(e, tweetSrcUrl) {
 function RenderTweet( tweet) {
 
     // var image_normal = "newinterface/twitter_avatar.png";
-    var image_normal = "http://twitter.com/"+tweet["author"]["screen_name"]+"/profile_image?size=original";
+    var image_normal = "https://avatars.io/twitter/"+tweet["author"]["screen_name"];
     var image_bigger = "";
     if( tweet["author"]["profile_image_url"] ) {
         image_normal = tweet["author"]["profile_image_url"]
